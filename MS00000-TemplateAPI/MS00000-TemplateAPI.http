@@ -1,0 +1,6 @@
+@MS00000_TemplateAPI_HostAddress = http://localhost:5278
+
+GET {{MS00000_TemplateAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
