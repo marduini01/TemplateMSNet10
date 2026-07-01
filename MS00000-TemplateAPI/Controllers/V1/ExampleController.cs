@@ -1,7 +1,6 @@
 ﻿using Asp.Versioning;
 using INPS.ServiceDefault.Logger;
 using INPS.ServiceDefault.Models.DTOs;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WsDatiPensioni;
 

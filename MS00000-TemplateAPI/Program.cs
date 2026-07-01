@@ -6,13 +6,19 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        BuildApp(args).Run();
+    }
+
+    internal static WebApplication BuildApp(string[] args)
+    {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
+        // Inserire i services necessari per l'applicazione
 
         builder.Services.AddControllers();
 
         builder.AddServiceDefaults();
+
         builder.AddServiceDefaultsApiVersioning();
         builder.AddServiceDefaultsSwagger();
         builder.AddWsDatiPensioneServices();
@@ -20,15 +26,16 @@ public class Program
         WebApplication app = builder.Build();
 
         app.UseServiceDefaults();
+
         app.UseServiceDefaultsSwagger();
 
-        // Configure the HTTP request pipeline.
+        // Inserire qui eventuali middleware personalizzati
 
         app.UseAuthorization();
 
 
         app.MapControllers();
 
-        app.Run();
+        return app;
     }
 }
