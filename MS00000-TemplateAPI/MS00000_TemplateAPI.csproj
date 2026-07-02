@@ -24,6 +24,10 @@
 	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	<PackageReference Include="INPS.ServiceDefault.Core" Version="1.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\DTOs\" />
+  </ItemGroup>
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'">
 		<Exec Command="dotnet tool restore"></Exec>
 		<Exec Command="dotnet swagger tofile --output openapi.yaml --yaml $(OutputPath)$(AssemblyName).dll v1" EnvironmentVariables="SERVICEDEFAULTS_OPENAPI_GENERATION=true" />
