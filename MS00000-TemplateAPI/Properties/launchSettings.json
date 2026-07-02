@@ -13,7 +13,8 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:32907/swagger",
       "environmentVariables": {
-        //"ASPNETCORE_HTTP_PORTS": "8080"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PSW_LOGDATABASE_DB": "13212aspNET!"
       },
       "publishAllPorts": false,
       "useSSL": false

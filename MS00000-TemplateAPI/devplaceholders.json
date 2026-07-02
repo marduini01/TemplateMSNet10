@@ -1,0 +1,7 @@
+{
+	"db-log": "Server=host.docker.internal;Database=DbTemplate;Encrypt=False;Persist Security Info=True;User Id=sa;Password={0};",
+	"smtp-host": "host.docker.internal",
+	"smtp-from-address": "mauro.arduini@soprasteria.com",
+	"serilog-level": "Debug",
+	"redis-connection-string": "host.docker.internal:6379"
+}
