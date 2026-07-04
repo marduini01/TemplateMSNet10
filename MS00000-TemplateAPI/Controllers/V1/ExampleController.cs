@@ -13,11 +13,13 @@ public class ExampleController : ControllerBase
 {
     private readonly IApplicationLogger logger;
     private readonly IWsDatiPensioniConsumer wsDatiPensioniConsumer;
+    private readonly ILogger<ExampleController> logger2;
 
-    public ExampleController(IApplicationLogger logger, IWsDatiPensioniConsumer wsDatiPensioniConsumer)
+    public ExampleController(IApplicationLogger logger, IWsDatiPensioniConsumer wsDatiPensioniConsumer, ILogger<ExampleController> logger2)
     {
         this.logger = logger;
         this.wsDatiPensioniConsumer = wsDatiPensioniConsumer;
+        this.logger2 = logger2;
     }
     [HttpGet]
     public async Task<IActionResult> Get()
@@ -32,6 +34,8 @@ public class ExampleController : ControllerBase
             Exception = null
         };
 
+        
+        
         logger.Information("Hello from IndexController!");
         await logger.DebugAsync("Messaggio di prova debug", additionalDataLog);
 
