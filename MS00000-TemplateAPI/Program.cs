@@ -1,3 +1,4 @@
+using Flowify.Extensions;
 using INPS.ServiceDefault.Extensions;
 
 namespace MS00000_TemplateAPI;
@@ -16,6 +17,7 @@ public class Program
         // Inserire i services necessari per l'applicazione
 
         builder.Services.AddControllers();
+        builder.Services.AddFlowify(new[] { typeof(Program).Assembly });
 
         builder.AddServiceDefaults();
 
